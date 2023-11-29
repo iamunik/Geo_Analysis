@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS = false; L_NO_TOUCH = false; L_DISABLE_3D = false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <style> #map_d192c1072d7a6980ceecca7b7a7b4f79 {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+             <h3 align="center" style="font-size:20px"><b>An Interactive map showing paid and quotaion amount per region</b></h3>
+             
+    
+            <div class="folium-map" id="map_d192c1072d7a6980ceecca7b7a7b4f79" ></div>
+        
+</body>
+<script>
+    
+    
+
+            
+                var bounds = null;
+            
+
+            var map_d192c1072d7a6980ceecca7b7a7b4f79 = L.map(
+                                  'map_d192c1072d7a6980ceecca7b7a7b4f79',
+                                  {center: [23.01263103472234,43.44772413541665],
+                                  zoom: 6,
+                                  maxBounds: bounds,
+                                  layers: [],
+                                  worldCopyJump: false,
+                                  crs: L.CRS.EPSG3857
+                                 });
+            
+        
+    
+            var tile_layer_868ac12c8c701958f6262df4cc12fc92 = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+        
+    
+            var tile_layer_a5f1f86f2fff3cd08e82605a2fff6e1d = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+        
+    
+            var tile_layer_8c61e59e862e07ae0c7510649ef984cd = L.tileLayer(
+                'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+        
+    
+            var tile_layer_c77ee8766b5efecb8bac2cd58b57bbcd = L.tileLayer(
+                'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+        
+    
+            var tile_layer_bc7b7fab9aa5a15a6c81753dc1bc4706 = L.tileLayer(
+                'https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+        
+    
+            var tile_layer_fd40e149f26bdc5dff92beeef715179e = L.tileLayer(
+                'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+        
+    
+            var tile_layer_21750cdebaaa2187fc513586831f7662 = L.tileLayer(
+                'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+        
+    
+            var layer_control_da1b99c604f262b60cfbe0aed2e5b7ac = {
+                base_layers : { "openstreetmap" : tile_layer_a5f1f86f2fff3cd08e82605a2fff6e1d,"stamenterrain" : tile_layer_8c61e59e862e07ae0c7510649ef984cd,"stamentoner" : tile_layer_c77ee8766b5efecb8bac2cd58b57bbcd,"stamenwatercolor" : tile_layer_bc7b7fab9aa5a15a6c81753dc1bc4706,"cartodbpositron" : tile_layer_fd40e149f26bdc5dff92beeef715179e,"cartodbdark_matter" : tile_layer_21750cdebaaa2187fc513586831f7662, },
+                overlays : {  }
+                };
+            L.control.layers(
+                layer_control_da1b99c604f262b60cfbe0aed2e5b7ac.base_layers,
+                layer_control_da1b99c604f262b60cfbe0aed2e5b7ac.overlays,
+                {position: 'topright',
+                 collapsed: true,
+                 autoZIndex: true
+                }).addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+        
+    
+
+            var marker_ffbf8e2e088b531b5dc7eef7e35f5fa5 = L.marker(
+                [17.984637,45.313961],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_8914590d0dbd23f8f5e04e9439df494d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ffbf8e2e088b531b5dc7eef7e35f5fa5.setIcon(icon_8914590d0dbd23f8f5e04e9439df494d);
+            
+    
+            var popup_7a5c3e076b0c8dcc30d3a273a7df58f6 = L.popup({maxWidth: '300'});
+
+            
+                var html_120523b2e6746870824f1f8d79bac6be = $('<div id="html_120523b2e6746870824f1f8d79bac6be" style="width: 100.0%; height: 100.0%;">Province = Najran<br> Total Paid = 70127.0<br> Total Quotation = 50966.0</div>')[0];
+                popup_7a5c3e076b0c8dcc30d3a273a7df58f6.setContent(html_120523b2e6746870824f1f8d79bac6be);
+            
+
+            marker_ffbf8e2e088b531b5dc7eef7e35f5fa5.bindPopup(popup_7a5c3e076b0c8dcc30d3a273a7df58f6);
+
+            
+        
+    
+
+            var marker_16205696ecc36e773862d9964d07ac14 = L.marker(
+                [27.851423,47.099382],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_b85b95bc3ee030a3635b62101b9cf9ed = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_16205696ecc36e773862d9964d07ac14.setIcon(icon_b85b95bc3ee030a3635b62101b9cf9ed);
+            
+    
+            var popup_ef0d9d97c168ac99555ecc4581e091cd = L.popup({maxWidth: '300'});
+
+            
+                var html_07383818a9d96b89b62bf3d03c42496f = $('<div id="html_07383818a9d96b89b62bf3d03c42496f" style="width: 100.0%; height: 100.0%;">Province = Eastern<br> Total Paid = 36926.5<br> Total Quotation = 27694.0</div>')[0];
+                popup_ef0d9d97c168ac99555ecc4581e091cd.setContent(html_07383818a9d96b89b62bf3d03c42496f);
+            
+
+            marker_16205696ecc36e773862d9964d07ac14.bindPopup(popup_ef0d9d97c168ac99555ecc4581e091cd);
+
+            
+        
+    
+
+            var marker_e4af38b9d66cfdd4b7c566d8364f72c8 = L.marker(
+                [23.085563,45.739918],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_2077ca424e10c9f240d164171eb8702d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e4af38b9d66cfdd4b7c566d8364f72c8.setIcon(icon_2077ca424e10c9f240d164171eb8702d);
+            
+    
+            var popup_6a2d3a8cd91fa3931bb40119babb062b = L.popup({maxWidth: '300'});
+
+            
+                var html_40c19a559e7459c1b6b95db68be33ba6 = $('<div id="html_40c19a559e7459c1b6b95db68be33ba6" style="width: 100.0%; height: 100.0%;">Province = Riyadh<br> Total Paid = 130674.5<br> Total Quotation = 173944.0</div>')[0];
+                popup_6a2d3a8cd91fa3931bb40119babb062b.setContent(html_40c19a559e7459c1b6b95db68be33ba6);
+            
+
+            marker_e4af38b9d66cfdd4b7c566d8364f72c8.bindPopup(popup_6a2d3a8cd91fa3931bb40119babb062b);
+
+            
+        
+    
+
+            var marker_1408dd5e6a453b030c56379ca0916fa9 = L.marker(
+                [19.690374,41.236239],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_c128bfc64bda0766e140fdd94c035b08 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_1408dd5e6a453b030c56379ca0916fa9.setIcon(icon_c128bfc64bda0766e140fdd94c035b08);
+            
+    
+            var popup_11b14f5289f3870ab941e1066d592faa = L.popup({maxWidth: '300'});
+
+            
+                var html_d81655de72f72d22cf38241f47337b9a = $('<div id="html_d81655de72f72d22cf38241f47337b9a" style="width: 100.0%; height: 100.0%;">Province = Al Bahah<br> Total Paid = 67206.0<br> Total Quotation = 47906.0</div>')[0];
+                popup_11b14f5289f3870ab941e1066d592faa.setContent(html_d81655de72f72d22cf38241f47337b9a);
+            
+
+            marker_1408dd5e6a453b030c56379ca0916fa9.bindPopup(popup_11b14f5289f3870ab941e1066d592faa);
+
+            
+        
+    
+
+            var marker_0af0fda91ff12ae49cd68f8bb87c33db = L.marker(
+                [19.356024,42.917622],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_aee66cc068728db260ac230b0dd41c6d = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0af0fda91ff12ae49cd68f8bb87c33db.setIcon(icon_aee66cc068728db260ac230b0dd41c6d);
+            
+    
+            var popup_0dbc639ccfff8a94873025c0d560abe9 = L.popup({maxWidth: '300'});
+
+            
+                var html_1b861597027d5e47e65929c473bca814 = $('<div id="html_1b861597027d5e47e65929c473bca814" style="width: 100.0%; height: 100.0%;">Province = Aseer<br> Total Paid = 29900.0<br> Total Quotation = 20884.0</div>')[0];
+                popup_0dbc639ccfff8a94873025c0d560abe9.setContent(html_1b861597027d5e47e65929c473bca814);
+            
+
+            marker_0af0fda91ff12ae49cd68f8bb87c33db.bindPopup(popup_0dbc639ccfff8a94873025c0d560abe9);
+
+            
+        
+    
+
+            var marker_0790f7a444bccebc695bc24af226b082 = L.marker(
+                [26.285344,43.088743],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_cd71ce9ec234592739db6ba0eb390868 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0790f7a444bccebc695bc24af226b082.setIcon(icon_cd71ce9ec234592739db6ba0eb390868);
+            
+    
+            var popup_7e1eb3e9214c16e8ea2f04ca65fe00c0 = L.popup({maxWidth: '300'});
+
+            
+                var html_598feb2b834978e402ecd7573e7ee419 = $('<div id="html_598feb2b834978e402ecd7573e7ee419" style="width: 100.0%; height: 100.0%;">Province = Al Qassim<br> Total Paid = 30509.499999999996<br> Total Quotation = 21814.0</div>')[0];
+                popup_7e1eb3e9214c16e8ea2f04ca65fe00c0.setContent(html_598feb2b834978e402ecd7573e7ee419);
+            
+
+            marker_0790f7a444bccebc695bc24af226b082.bindPopup(popup_7e1eb3e9214c16e8ea2f04ca65fe00c0);
+
+            
+        
+    
+
+            var marker_44a216663b1764395abf00d6c1268fe0 = L.marker(
+                [24.344652,40.913071],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_e2b006e3946e222efca60ab6d88f3ee5 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_44a216663b1764395abf00d6c1268fe0.setIcon(icon_e2b006e3946e222efca60ab6d88f3ee5);
+            
+    
+            var popup_dfbf45005787f36128ec4febe74c0884 = L.popup({maxWidth: '300'});
+
+            
+                var html_551d073b813352739580e3fa38be8893 = $('<div id="html_551d073b813352739580e3fa38be8893" style="width: 100.0%; height: 100.0%;">Province = Al Madinah<br> Total Paid = 31233.999999999996<br> Total Quotation = 21754.0</div>')[0];
+                popup_dfbf45005787f36128ec4febe74c0884.setContent(html_551d073b813352739580e3fa38be8893);
+            
+
+            marker_44a216663b1764395abf00d6c1268fe0.bindPopup(popup_dfbf45005787f36128ec4febe74c0884);
+
+            
+        
+    
+
+            var marker_09f9d647ec5440ceee0f6cb48fec276a = L.marker(
+                [21.780582,41.720152],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_04aaae61069590cdc6229e468cabb431 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_09f9d647ec5440ceee0f6cb48fec276a.setIcon(icon_04aaae61069590cdc6229e468cabb431);
+            
+    
+            var popup_0df023a7a1bbaeebfb9300e1cdf50cde = L.popup({maxWidth: '300'});
+
+            
+                var html_2a1cea3c0d973d2fbdbb9690ae7e85e2 = $('<div id="html_2a1cea3c0d973d2fbdbb9690ae7e85e2" style="width: 100.0%; height: 100.0%;">Province = Makkah<br> Total Paid = 31463.999999999996<br> Total Quotation = 22214.0</div>')[0];
+                popup_0df023a7a1bbaeebfb9300e1cdf50cde.setContent(html_2a1cea3c0d973d2fbdbb9690ae7e85e2);
+            
+
+            marker_09f9d647ec5440ceee0f6cb48fec276a.bindPopup(popup_0df023a7a1bbaeebfb9300e1cdf50cde);
+
+            
+        
+    
+
+            var marker_7fc6653620134f68bcb7a4f7a5ddc03a = L.marker(
+                [27.81121,37.045381],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_03055b0f341eee6766f4c69f2176c4d2 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7fc6653620134f68bcb7a4f7a5ddc03a.setIcon(icon_03055b0f341eee6766f4c69f2176c4d2);
+            
+    
+            var popup_f5ee970f359b6783045364261084a00c = L.popup({maxWidth: '300'});
+
+            
+                var html_b40816e43c136c90f17f746ed6ac1289 = $('<div id="html_b40816e43c136c90f17f746ed6ac1289" style="width: 100.0%; height: 100.0%;">Province = Tabuk<br> Total Paid = 32832.5<br> Total Quotation = 23074.0</div>')[0];
+                popup_f5ee970f359b6783045364261084a00c.setContent(html_b40816e43c136c90f17f746ed6ac1289);
+            
+
+            marker_7fc6653620134f68bcb7a4f7a5ddc03a.bindPopup(popup_f5ee970f359b6783045364261084a00c);
+
+            
+        
+    
+
+            var marker_f2649aad8880049ce8f03f662a430ad3 = L.marker(
+                [27.776167,40.540493],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_d4b286adc4d58abf7d454373027f98e9 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f2649aad8880049ce8f03f662a430ad3.setIcon(icon_d4b286adc4d58abf7d454373027f98e9);
+            
+    
+            var popup_000ed0e90105c59c31deec009dc1ae55 = L.popup({maxWidth: '300'});
+
+            
+                var html_302cb699f1caf135374a091302c81aaf = $('<div id="html_302cb699f1caf135374a091302c81aaf" style="width: 100.0%; height: 100.0%;">Province = Hail<br> Total Paid = 32544.999999999996<br> Total Quotation = 22525.0</div>')[0];
+                popup_000ed0e90105c59c31deec009dc1ae55.setContent(html_302cb699f1caf135374a091302c81aaf);
+            
+
+            marker_f2649aad8880049ce8f03f662a430ad3.bindPopup(popup_000ed0e90105c59c31deec009dc1ae55);
+
+            
+        
+    
+
+            var marker_c373d645ad26c3e88ef19aca377e7765 = L.marker(
+                [17.47253,42.861704],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_82f178f1b7bc931f803185b9677674bd = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c373d645ad26c3e88ef19aca377e7765.setIcon(icon_82f178f1b7bc931f803185b9677674bd);
+            
+    
+            var popup_bc18f381b153a98d13391d91e77de81e = L.popup({maxWidth: '300'});
+
+            
+                var html_a3453f310b5aa673e0c274917a746c0a = $('<div id="html_a3453f310b5aa673e0c274917a746c0a" style="width: 100.0%; height: 100.0%;">Province = Jazan<br> Total Paid = 33982.5<br> Total Quotation = 23762.0</div>')[0];
+                popup_bc18f381b153a98d13391d91e77de81e.setContent(html_a3453f310b5aa673e0c274917a746c0a);
+            
+
+            marker_c373d645ad26c3e88ef19aca377e7765.bindPopup(popup_bc18f381b153a98d13391d91e77de81e);
+
+            
+        
+    
+
+            var marker_e5d71d786de207033ef622d3741045a8 = L.marker(
+                [20.294341,41.502658],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_d192c1072d7a6980ceecca7b7a7b4f79);
+            
+    
+
+                var icon_cdefb01ea691c45f58b1f1846fd2cdc7 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: '#964B00',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e5d71d786de207033ef622d3741045a8.setIcon(icon_cdefb01ea691c45f58b1f1846fd2cdc7);
+            
+    
+            var popup_40441eec45d85c89c5a43363e8f30026 = L.popup({maxWidth: '300'});
+
+            
+                var html_fd666e166ce1b55f58f14a0545022591 = $('<div id="html_fd666e166ce1b55f58f14a0545022591" style="width: 100.0%; height: 100.0%;">Province = Al Jowf<br> Total Paid = 34695.5<br> Total Quotation = 26224.0</div>')[0];
+                popup_40441eec45d85c89c5a43363e8f30026.setContent(html_fd666e166ce1b55f58f14a0545022591);
+            
+
+            marker_e5d71d786de207033ef622d3741045a8.bindPopup(popup_40441eec45d85c89c5a43363e8f30026);
+
+            
+        
+</script>
+</html>
